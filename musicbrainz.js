@@ -1,4 +1,5 @@
 var MBz = (function () {
+    "use strict";
 
     // Helper function to get data from the MusicBrainz API
     // TODO: enforce rate limiting http://musicbrainz.org/doc/XML_Web_Service%2FRate_Limiting
