@@ -2,7 +2,7 @@
 
 ## Installation
 
-```javascript
+```html
 <script src="js/musicbrainz.min.js"></script>
 ```
 
