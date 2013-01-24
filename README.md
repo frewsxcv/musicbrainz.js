@@ -10,6 +10,14 @@ Requires jQuery and CORS
 
 ## Usage
 
+### Lookups
+
+Coming soon...
+
+### Search
+
+#### Artist search
+
 ```javascript
 MBz.search({
   resource: "artist",
@@ -20,6 +28,8 @@ MBz.search({
 });
 ```
 
+#### Label search
+
 ```javascript
 MBz.search({
     resource: "label",
@@ -29,6 +39,8 @@ MBz.search({
     }
 });
 ```
+
+#### Release search
 
 ```javascript
 MBz.search({
