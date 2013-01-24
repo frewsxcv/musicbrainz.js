@@ -333,7 +333,6 @@ var MBz = (function () {
 
     var ret = {};
 
-    // TODO: Support offset
     ret.search = function (opts) {
         var url,
             query = encodeURIComponent(opts.query),
