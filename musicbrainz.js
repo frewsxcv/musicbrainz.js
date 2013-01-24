@@ -330,6 +330,7 @@ var MBz = (function () {
     Artist.prototype.getRelGroups = function (callback) {
     };
 
+
     var searchResources = ["artist", "label", "recording", "release", "release-group", "work"];
 
     var ret = {};
