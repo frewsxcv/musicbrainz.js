@@ -103,8 +103,6 @@ var MBz = (function () {
         var that = this,
             $xml = $(xml);
 
-        console.log(xml);
-
         // MusicBrainz ID of the release
         if ($xml.attr("id") !== "") {
             this.mbid = $xml.attr("id");
