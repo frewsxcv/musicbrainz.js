@@ -15,6 +15,11 @@ var MBz = (function () {
         });
     };
 
+    var set = function (context, key, value) {
+        if (value !== "") {
+            context[key] = value;
+        }
+    };
 
     // https://wiki.musicbrainz.org/Label
     var Label = function (xml) {
@@ -22,46 +27,30 @@ var MBz = (function () {
             that = this;
 
         // MusicBrainz ID of the label
-        if ($xml.attr("id") !== "") {
-            this.mbid = $xml.attr("id");
-        }
+        set(this, "mbid", $xml.attr("id"));
 
         // Describes the main activity of the label
-        if ($xml.attr("type") !== "") {
-            this.type = $xml.attr("type");
-        }
+        set(this, "type", $xml.attr("type"));
 
         // Official name of the label
-        if ($xml.children("name").text() !== "") {
-            this.name = $xml.children("name").text();
-        }
+        set(this, "name", $xml.children("name").text());
 
         // Variant of the name used when sorting labels by name
-        if ($xml.children("sort-name").text() !== "") {
-            this.sortName = $xml.children("sort-name").text();
-        }
+        set(this, "sortName", $xml.children("sort-name").text());
 
         // Country of origin for the label
-        if ($xml.children("country").text() !== "") {
-            this.country = $xml.children("country").text();
-        }
+        set(this, "country", $xml.children("country").text());
 
         // Helps distinguish between identically named labels
-        if ($xml.children("disambiguation").text() !== "") {
-            this.disambig = $xml.children("disambiguation").text();
-        }
+        set(this, "disambig", $xml.children("disambiguation").text());
 
         // Life span of the label
         // More info: https://wiki.musicbrainz.org/Begin_and_End_Dates
         this.lifeSpan = {};
 
-        if ($xml.children("life-span").children("begin").text() !== "") {
-            this.lifeSpan.begin = $xml.children("life-span").children("begin").text();
-        }
+        set(this.lifeSpan, "begin", $xml.children("life-span").children("begin").text());
 
-        if ($xml.children("life-span").children("end").text() !== "") {
-            this.lifeSpan.begin = $xml.children("life-span").children("end").text();
-        }
+        set(this.lifeSpan, "end", $xml.children("life-span").children("end").text());
 
         if ($xml.children("life-span").children("ended").text() === "true") {
             this.lifeSpan.ended = true;

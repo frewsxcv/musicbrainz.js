@@ -1,0 +1,25 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+    <script src="musicbrainz.js"></script>
+    <script>
+      MBz.search({
+          resource: "release",
+          query: "lift your skinny",
+          results: function (releases) {
+              console.log(releases);
+          }
+      });
+
+      MBz.search({
+          resource: "label",
+          query: "temporary",
+          results: function (labels) {
+              console.log(labels);
+          }
+      });
+    </script>
+  </body>
+</html
